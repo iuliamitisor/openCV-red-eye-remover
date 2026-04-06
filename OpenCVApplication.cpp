@@ -53,14 +53,13 @@ void redEyeRemovalRGBThresholding()
         rectReady = false;
         selectedRect = Rect();
 
-        namedWindow("Original Image");
+        imshow("Original Image", src);
         setMouseCallback("Original Image", mouseHandlerRedEye, &src);
 
         printf("Draw a rectangle around the eye region using your mouse.\n");
 
-        while (!rectReady) // while flag not set
+        while (!rectReady) // wait for user to finish drawing
         {
-            imshow("Original Image", src);
             if (waitKey(30) == 27)
                 break;
         }
